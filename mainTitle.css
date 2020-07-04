@@ -1,0 +1,19 @@
+.mainTitle{
+        text-align: center;
+}
+.mainTitle img{
+    margin-top:10px;
+    position: relative;
+    max-width: 700px;
+    max-height: 700px;
+    width: auto;
+    height: auto;
+}
+.mainTitle div {
+    font-size: 4rem;
+    color: white;
+    position: absolute;
+    top:50%;left:50%;
+    transform:translate(-50%, -50%);
+    margin-top:70px;
+}
