@@ -1,0 +1,11 @@
+ .introduce{
+    color:gray;
+    text-align: center;
+    font-size:1.1rem;
+}
+.linkIcon img{
+    filter: opacity(.5) drop-shadow(0 0 0 white);
+    height:15px;
+    width:15px;
+    margin-right:5px;
+}
