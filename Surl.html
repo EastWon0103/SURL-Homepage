@@ -1,13 +1,26 @@
+ 
 <!DOCTYPE html>
 <html>
   <head>
     <title>SURL(설)ㅣ밴드 그 이상</title>
+    <link rel="shortcut icon" type="image⁄x-icon" href="img/surlTitle.jpg">
     <meta charset="UTF-8">
     <style>
-    @import url("background.css");
-    @import url("mainTitle.css");
-    @import url("introduce.css");
-    
+    @import url("css/background.css");
+    @import url("css/mainTitle.css");
+    @import url("css/introduce.css");
+    .audioPlayer{
+        height:55px;
+        position:fixed;
+        bottom:0;
+        width:100%;
+        background-color:#0D0D0D;
+        color:white;
+    }
+    .audioPlayer img{
+        height:50px;
+        width: auto;
+    }
     #content{
         height:2000px;
     }
@@ -16,7 +29,7 @@
 
   <body>
     <div class="mainTitle">
-        <img src="surlTitle.jpg" />
+        <img src="img/surlTitle.jpg" />
         <div>밴드 그 이상</div>
     </div>
     <div class="introduce">
@@ -24,12 +37,17 @@
         <div>데뷔ㅣ2018년 컴필레이션 앨범[bright #7] - '여기에 있자'</div>
         <div>관련링크ㅣ
         <span class="linkIcon">
-            <a href="http://happyrobot.co.kr/artist/surl%EC%84%A4-2/" target="_blank"><img src="homeIcon.svg" alt="공식 홈페이지"></a>
-            <a href="https://www.instagram.com/SURLofficial/" target="_blank"><img src="facebookIcon.svg" alt="공식 페이스북"></a>
-            <a href="https://www.facebook.com/SURLofficial" target="_blank"><img src="instagramIcon.svg" alt="공식 인스타그램"></a>
-            <a href="https://www.youtube.com/channel/UClNvDZAwy0z1P2un18UxvCQ" target="_blank"><img src="youtubeIcon.svg" alt="공식 인스타그램"></a>
+            <a href="http://happyrobot.co.kr/artist/surl%EC%84%A4-2/" target="_blank"><img src="img/homeIcon.svg" alt="공식 홈페이지"></a>
+            <a href="https://www.instagram.com/SURLofficial/" target="_blank"><img src="img/facebookIcon.svg" alt="공식 페이스북"></a>
+            <a href="https://www.facebook.com/SURLofficial" target="_blank"><img src="img/instagramIcon.svg" alt="공식 인스타그램"></a>
+            <a href="https://www.youtube.com/channel/UClNvDZAwy0z1P2un18UxvCQ" target="_blank"><img src="img/youtubeIcon.svg" alt="공식 인스타그램"></a>
         </span>
         </div>
+    </div>
+    <div class="audioPlayer">
+        <img src="img/surlTitle.jpg">
+        <span>SURL(설)</span>
+        <span>여기에 있자</span>
     </div>
     <div id="content"></div>
   </body>
