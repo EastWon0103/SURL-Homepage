@@ -10,6 +10,7 @@
     @import url("css/mainTitle.css");
     @import url("css/introduce.css");
     .audioPlayer{
+        display:inline-flex;
         height:55px;
         position:fixed;
         bottom:0;
@@ -17,9 +18,23 @@
         background-color:#0D0D0D;
         color:white;
     }
-    .audioPlayer img{
-        height:50px;
+    .audioPlayer #songImg{
+        height:55px;
         width: auto;
+    }
+    #songInfo{
+        display:flex;
+        flex-direction: row;
+        border: 1px solid white;
+    }
+    #songInfo #songTitle{
+
+    }
+    #songInfo #artist{
+        
+    }
+    #controller{
+        border: 1px solid white;
     }
     #content{
         height:2000px;
@@ -45,9 +60,16 @@
         </div>
     </div>
     <div class="audioPlayer">
-        <img src="img/surlTitle.jpg">
-        <span>SURL(설)</span>
-        <span>여기에 있자</span>
+        <img id="songImg" src="img/surlTitle.jpg">
+        <div id="songInfo">
+            <div id="songTitle">SURL(설)</div>
+            <div id="artist">여기에 있자</div>
+        </div>
+        <span id="controller">
+            <span>저번곡</span>
+            <span>시작</span>
+            <span>다음곡</span>
+        </span>
     </div>
     <div id="content"></div>
   </body>
