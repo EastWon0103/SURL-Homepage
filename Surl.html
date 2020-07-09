@@ -10,32 +10,48 @@
     @import url("css/mainTitle.css");
     @import url("css/introduce.css");
     .audioPlayer{
-        display:inline-flex;
-        height:55px;
+        display:flex;
         position:fixed;
         bottom:0;
+        height:50px;
         width:100%;
         background-color:#0D0D0D;
         color:white;
     }
-    .audioPlayer #songImg{
-        height:55px;
-        width: auto;
+    #songImg{
+        flex-basis: 50px;
+    }
+    #songImg img{
+        height:50px;
+        width:50px;
     }
     #songInfo{
-        display:flex;
-        flex-direction: row;
-        border: 1px solid white;
+        flex-grow: 1;
+        font-size:0.8rem;
+        margin-top:5px;
+        margin-left:10px;        
     }
-    #songInfo #songTitle{
-
-    }
-    #songInfo #artist{
-        
+    #empty{
+        flex-grow:5;
     }
     #controller{
-        border: 1px solid white;
+        flex-basis: 200px;
+        display: flex;
+        justify-content: space-around;
+        padding-top:5px;
     }
+    #controller img{
+        height:40px;
+        width:40px;
+        filter: opacity(.5) drop-shadow(0 0 0 white);
+    }
+    #controller img:nth-child(1){
+        transform:scaleX(-1);
+    }
+    
+
+
+
     #content{
         height:2000px;
     }
@@ -53,23 +69,25 @@
         <div>관련링크ㅣ
         <span class="linkIcon">
             <a href="http://happyrobot.co.kr/artist/surl%EC%84%A4-2/" target="_blank"><img src="img/homeIcon.svg" alt="공식 홈페이지"></a>
-            <a href="https://www.instagram.com/SURLofficial/" target="_blank"><img src="img/facebookIcon.svg" alt="공식 페이스북"></a>
-            <a href="https://www.facebook.com/SURLofficial" target="_blank"><img src="img/instagramIcon.svg" alt="공식 인스타그램"></a>
+            <a href="https://www.instagram.com/SURLofficial/" target="_blank"><img src="img/instagramIcon.svg" alt="공식 페이스북"></a>
+            <a href="https://www.facebook.com/SURLofficial" target="_blank"><img src="img/facebookIcon.svg" alt="공식 인스타그램"></a>
             <a href="https://www.youtube.com/channel/UClNvDZAwy0z1P2un18UxvCQ" target="_blank"><img src="img/youtubeIcon.svg" alt="공식 인스타그램"></a>
         </span>
         </div>
     </div>
     <div class="audioPlayer">
-        <img id="songImg" src="img/surlTitle.jpg">
+        <div id="songImg"><img src="img/surlTitle.jpg"></div>
         <div id="songInfo">
             <div id="songTitle">SURL(설)</div>
             <div id="artist">여기에 있자</div>
         </div>
-        <span id="controller">
-            <span>저번곡</span>
-            <span>시작</span>
-            <span>다음곡</span>
-        </span>
+        <div id="empty"></div>
+        <div id="controller">
+            <img id="previous" src="img/arrowButton.svg">
+            <img id="startPause" src="img/pauseButton.svg">
+            <img id="next" src="img/arrowButton.svg">
+        </div>
+        <script src="audioPlayer.js"></script>
     </div>
     <div id="content"></div>
   </body>
