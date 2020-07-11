@@ -7,6 +7,28 @@ var startPauseButton = document.querySelector("#startPause");
 var startButton = "img/playButton.svg"
 var pauseButton = "img/pauseButton.svg"
 
+var songList = [];
+var snowAudio = {"title": "눈", "album": "aren't you", "file": audioFile1};
+var cillaAudio = {"title": "Cilla", "album": "Cilla", "file": audioFile2};
+var dryFlowerAudio = {"title": "Dry Flower", "album": "Dry flower", "file": audioFile3};
+var ferrisWheelAudio = {"title": "Ferris Wheel", "album": "Ferris Wheel", "file": audioFile4};
+var theLightsBehindYouAudio = {"title": "The Lights Behind You", "album": "aren't you", "file": audioFile5};
+songList.push(snowAudio);
+songList.push(cillaAudio);
+songList.push(dryFlowerAudio);
+songList.push(ferrisWheelAudio);
+songList.push(theLightsBehindYouAudio);
+
+var nextButton = document.querySelector("#next");
+
+function nextSong(event){
+   
+}
+
+class currentSong{
+    
+}
+
 function startPause(event){
     var currentPath = startPauseButton.src.substr(startPauseButton.src.lastIndexOf('img'));
     if(currentPath === startButton){
@@ -20,5 +42,9 @@ function startPause(event){
 
 function init(){
     startPauseButton.addEventListener("click", startPause);
+    nextButton.addEventListener("click", nextSong);
+    while (true){
+        
+    }
 }
 init();
