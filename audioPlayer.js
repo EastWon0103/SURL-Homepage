@@ -21,22 +21,24 @@ songList.push(theLightsBehindYouAudio);
 
 var nextButton = document.querySelector("#next");
 
-function nextSong(event){
-   
+var trackNumber = 0;
+
+function currentSong(){
+    return songList[trackNumber]["file"];
 }
 
-class currentSong{
-    
+function autoNextSong(){
+    setInterval
 }
 
 function startPause(event){
     var currentPath = startPauseButton.src.substr(startPauseButton.src.lastIndexOf('img'));
     if(currentPath === startButton){
         startPauseButton.src = pauseButton;
-        audioFile1.play();
+        currentSong().play();
     } else {
         startPauseButton.src = startButton;
-        audioFile1.pause();
+        currentSong().pause();
     } 
 }
 
