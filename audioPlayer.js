@@ -1,3 +1,11 @@
+// 1. 샘플음악 필요 (10초 내지의 음악)
+// 2. 자동으로 다음곡으로 넘어가는 것 구현(setInterval로 구현할 것)
+// 2.1 자동으로 다음곡 play상태일때만 적용되는 것을 확인할 것
+
+
+
+
+
 var audioFile1 = new Audio("mp3/눈.mp3");
 var audioFile2 = new Audio("mp3/Cilla.mp3");
 var audioFile3 = new Audio("mp3/Dry Flower.mp3");
