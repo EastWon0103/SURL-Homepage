@@ -1,15 +1,18 @@
-// 앨범이랑 제목이 바뀌어야 함
-// 토글로 if else 최소화 하기
+// test코드를 다시 원본으로 복귀
+// 샘플말고 진짜 사용
+// 좀 더 수정할 것이 있는지 확인
 var startPauseButton = document.querySelector("#startPause");
 var nextButton = document.querySelector("#next");
 var previousButton = document.querySelector("#previous");
+var songAlbumCover = document.querySelector("#songImg img");
+var songTitle = document.querySelector("#songTitle");
 
 var startButton = "img/playButton.svg"
 var pauseButton = "img/pauseButton.svg"
 var songs = [
-    "mp3/sample1.mp3",
-    "mp3/sample2.mp3",
-    "mp3/sample3.mp3"
+    {"title": "눈", "albumSrc": "img/Aren'tYouAlbumCover.jpg", "audioSrc": "mp3/sample1.mp3"},
+    {"title": "Cilla", "albumSrc": "img/CillaAlbumCover.jpg", "audioSrc": "mp3/sample2.mp3"},
+    {"title": "Dry Flower", "albumSrc": "img/IKnowAlbumCover.jpg", "audioSrc": "mp3/sample3.mp3"}
 ]
 var song = new Audio();
 var max = songs.length;
@@ -17,7 +20,10 @@ var currentSong = 0;
 var songCurrentTime = 0;
 
 function playSong(index){
-    song.src = songs[index];
+    song.src = songs[index]["audioSrc"];
+    songTitle.innerHTML = songs[index]["title"];
+    songAlbumCover.src = songs[index]["albumSrc"];
+    console.log(songAlbumCover);
     song.currentTime = songCurrentTime;
     song.play();
 }
@@ -107,57 +113,3 @@ function init(){
 }
 
 init();
-
-
-// const audioFile1 = new Audio("mp3/sample1.mp3");
-// const audioFile2 = new Audio("mp3/sample2.mp3");
-// const audioFile3 = new Audio("mp3/sample3.mp3");
-
-// var songList = [];
-// var sample1 = {"title": "눈", "album": "aren't you", "file": audioFile1};
-// var sample2 = {"title": "Cilla", "album": "Cilla", "file": audioFile2};
-// var sample3 = {"title": "Dry Flower", "album": "Dry flower", "file": audioFile3};
-// songList.push(sample1);
-// songList.push(sample2);
-// songList.push(sample3);
-
-// var startPauseButton = document.querySelector("#startPause");
-// var nextButton = document.querySelector("#next");
-
-// var startButton = "img/playButton.svg"
-// var pauseButton = "img/pauseButton.svg"
-
-// const trackNumber = 0;
-
-// function currentSong(){
-//     return songList[trackNumber]["file"];
-// }
-
-// function songEndCheck(){
-//     state = currentSong().ended;
-//     if (state){
-//         console.log("end");
-//         clearInterval(interval);
-//     } else{
-//         console.log("not end");
-//     }
-// }
-
-// function startPause(event){
-//     var currentPath = startPauseButton.src.substr(startPauseButton.src.lastIndexOf('img'));
-//     if(currentPath === startButton){
-//         startPauseButton.src = pauseButton;
-//         // 여기에 재귀를 
-//         currentSong().play();
-//         var interval = setInterval(songEndCheck, 1000);
-//     } else {
-//         startPauseButton.src = startButton;
-//         currentSong().pause();
-//     } 
-// }
-
-// function init(){
-//     startPauseButton.addEventListener("click", startPause);
-//     // nextButton.addEventListener("click", nextSong);
-// }
-// init();
