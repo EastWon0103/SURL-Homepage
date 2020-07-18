@@ -5,55 +5,31 @@
     <link rel="shortcut icon" type="image⁄x-icon" href="img/surlTitle.jpg">
     <meta charset="UTF-8">
     <style>
-    @import url("css/background.css");
-    @import url("css/mainTitle.css");
-    @import url("css/introduce.css");
-    .audioPlayer{
-        display:flex;
-        position:fixed;
-        bottom:0;
-        height:50px;
-        width:100%;
-        background-color:#0D0D0D;
-        color:white;
-    }
-    #songImg{
-        flex-basis: 50px;
-    }
-    #songImg img{
-        height:50px;
-        width:50px;
-    }
-    #songInfo{
-        flex-grow: 1;
-        font-size:0.8rem;
-        margin-top:5px;
-        margin-left:10px;        
-    }
-    #empty{
-        flex-grow:5;
-    }
-    #controller{
-        flex-basis: 200px;
-        display: flex;
-        justify-content: space-around;
-        padding-top:5px;
-    }
-    #controller img{
-        height:40px;
-        width:40px;
-        filter: opacity(.5) drop-shadow(0 0 0 white);
-    }
-    #controller img:nth-child(1){
-        transform:scaleX(-1);
-    }
-    
+        @import url("css/background.css");
+        @import url("css/mainTitle.css");
+        @import url("css/introduce.css");
+        @import url("css/audioPlayer.css");
+        
+        #summary{
+            color: white;
+            margin-top:200px;
+            position: relative;
+            left: 10%;
+        }
+        #leftLine{
+            display: inline-block;
+            height: 1px;
+            width: 30px;
+            background-color:white;
+            border:1px solid white;
+        }
+        #rightLine{
+            border:1px solid white;
+        }
 
-
-
-    #content{
-        height:2000px;
-    }
+        #content{
+            height:2000px;
+        }
     </style>
   </head>
 
@@ -62,6 +38,7 @@
         <img src="img/surlTitle.jpg" />
         <div>밴드 그 이상</div>
     </div>
+
     <div class="introduce">
         <div>소속사ㅣ해피로봇 레코드</div>
         <div>데뷔ㅣ2018년 컴필레이션 앨범[bright #7] - '여기에 있자'</div>
@@ -74,6 +51,17 @@
         </span>
         </div>
     </div>
+
+    <div id="summary">
+        <div>
+            <span id="leftLine"></span>
+            <span>밴드 씬의 슈퍼루키, SURL(설)</span>
+            <span id="rightLine">-</span>    
+        </div>
+        
+        <img src="img/surlGroupPhoto.jpg">
+    </div>
+
     <div class="audioPlayer">
         <div id="songImg"><img src="img/Aren'tYouAlbumCover.jpg"></div>
         <div id="songInfo">
@@ -86,8 +74,7 @@
             <img id="startPause" src="img/playButton.svg">
             <img id="next" src="img/arrowButton.svg">
         </div>
-        <!-- <script src="audioPlayer.js"></script> -->
-        <script src="test.js"></script>
+        <script src="audioPlayer.js"></script>
     </div>
     <div id="content"></div>
   </body>
