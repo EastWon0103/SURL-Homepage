@@ -11,44 +11,33 @@
             margin: 0;
             padding: 0;
         }
-        
-        #summary{
-            color: white;
-            /* margin-top:200px;
-            position: relative;
-            left: 10%; */
-        }
 
-        .headline{
-            border:1px solid white;
-            /* width:200px; */
+        #title{
+            color:white;
+            font-size:3rem;
+            animation-name: slideIn;
+            animation-duration: 2s;
+            animation-delay: now;
+            animation-direction: normal;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
         }
-        #leftLine{
-            display: inline-block;
-            height: 1px;
-            width: 105px;
-            background-color:white;
-        }
-        #rightLine{
-            display: inline-block;
-            height: 1px;
-            width: 105px;
-            background-color:white;
-        }
-        #headlineText{
-            font-size:2.5rem;
+        @keyframes slideIn{
+            0%{
+                /* transform:translateX(0px); */
+                clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+            }
+            25%{}
+            50%{}
+            75%{}
+            100%{
+                /* transform:translateX(50px); */
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
         }
     </style>
 </head>
 <body>
-    <div id="summary">
-        <div class="headline">
-            <span id="leftLine"></span>
-            <span id="headlineText">밴드 씬의 슈퍼루키, SURL(설)</span>
-            <span id="rightLine"></span>    
-        </div>
-                
-        <img src="img/surlGroupPhoto.jpg">
-    </div>
+    <div id="title">밴드 씬의 슈퍼루키, SURL(설)</div>
 </body>
 </html>
