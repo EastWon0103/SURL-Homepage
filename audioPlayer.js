@@ -1,60 +1,114 @@
-// 1. 샘플음악 필요 (10초 내지의 음악)
-// 2. 자동으로 다음곡으로 넘어가는 것 구현(setInterval로 구현할 것)
-// 2.1 자동으로 다음곡 play상태일때만 적용되는 것을 확인할 것
-
-
-
-
-
-var audioFile1 = new Audio("mp3/눈.mp3");
-var audioFile2 = new Audio("mp3/Cilla.mp3");
-var audioFile3 = new Audio("mp3/Dry Flower.mp3");
-var audioFile4 = new Audio("mp3/Ferris Wheel.mp3");
-var audioFile5 = new Audio("mp3/The Lights Behind You.mp3");
 var startPauseButton = document.querySelector("#startPause");
+var nextButton = document.querySelector("#next");
+var previousButton = document.querySelector("#previous");
+var songAlbumCover = document.querySelector("#songImg img");
+var songTitle = document.querySelector("#songTitle");
+
 var startButton = "img/playButton.svg"
 var pauseButton = "img/pauseButton.svg"
+var songs = [
+    {"title": "눈", "albumSrc": "img/Aren'tYouAlbumCover.jpg", "audioSrc": "mp3/눈.mp3"},
+    {"title": "Cilla", "albumSrc": "img/CillaAlbumCover.jpg", "audioSrc": "mp3/Cilla.mp3"},
+    {"title": "Dry Flower", "albumSrc": "img/IKnowAlbumCover.jpg", "audioSrc": "mp3/Dry Flower.mp3"},
+    {"title": "The Lights Behind You", "albumSrc": "img/Aren'tYouAlbumCover.jpg", "audioSrc": "mp3/The Lights Behind You.mp3"},
+    {"title": "Ferris Wheel", "albumSrc": "img/FerrisWheelAlbumCover.jpg", "audioSrc": "mp3/Ferris Wheel.mp3"}
+]
+var song = new Audio();
+var max = songs.length;
+var currentSong = 0;
+var songCurrentTime = 0;
 
-var songList = [];
-var snowAudio = {"title": "눈", "album": "aren't you", "file": audioFile1};
-var cillaAudio = {"title": "Cilla", "album": "Cilla", "file": audioFile2};
-var dryFlowerAudio = {"title": "Dry Flower", "album": "Dry flower", "file": audioFile3};
-var ferrisWheelAudio = {"title": "Ferris Wheel", "album": "Ferris Wheel", "file": audioFile4};
-var theLightsBehindYouAudio = {"title": "The Lights Behind You", "album": "aren't you", "file": audioFile5};
-songList.push(snowAudio);
-songList.push(cillaAudio);
-songList.push(dryFlowerAudio);
-songList.push(ferrisWheelAudio);
-songList.push(theLightsBehindYouAudio);
-
-var nextButton = document.querySelector("#next");
-
-var trackNumber = 0;
-
-function currentSong(){
-    return songList[trackNumber]["file"];
+function playSong(index){
+    song.src = songs[index]["audioSrc"];
+    songTitle.innerHTML = songs[index]["title"];
+    songAlbumCover.src = songs[index]["albumSrc"];
+    console.log(songAlbumCover);
+    song.currentTime = songCurrentTime;
+    song.play();
 }
 
-function autoNextSong(){
-    setInterval
+function pauseSong(index){
+    songCurrentTime = song.currentTime;
+    song.pause();
+}
+
+function playerState(){
+    var currentPath = startPauseButton.src.substr(startPauseButton.src.lastIndexOf('img'));
+    if(currentPath === startButton){
+        return true; //스탑된 상태
+    } else {
+        return false; //플레이 중
+    } 
+}
+
+function playBeforeSong(event){
+    state = playerState();
+    if (state){ //스탑된 상태이면 
+        songCurrentTime = song.currentTime;
+        if (songCurrentTime < 1.5){ //곡의 길이가 1.5도 안되면
+            currentSong--;
+            songCurrentTime = 0;
+            if (currentSong == -1){ //인덱스가 0을 벗어나면  
+                currentSong = max-1;
+            }
+        } else{ //1.5초가 넘어간 상태면 
+            songCurrentTime = 0;
+        }
+    } else{ //플레이 중이면
+        songCurrentTime = song.currentTime;
+        if (songCurrentTime < 1.5){ //곡의 길이가 1.5도 안되면
+            currentSong--;
+            songCurrentTime = 0;
+            if (currentSong == -1){ //인덱스가 0을 벗어나면
+                currentSong = max-1;
+                playSong(currentSong);
+            } else{ 
+                playSong(currentSong);
+            }
+        } else{ //1.5초가 넘어간 상태면 
+            songCurrentTime = 0;
+            playSong(currentSong);
+        }
+    } 
+}
+
+function playNextSong(event){
+    state = playerState();
+    if (state){ 
+        currentSong++;
+        songCurrentTime = 0;
+        if (currentSong == max){
+            currentSong = 0;
+        }
+    } else{
+        currentSong++;
+        songCurrentTime = 0;
+        if (currentSong == max){
+            currentSong = 0;
+            playSong(currentSong);
+        }
+        else{
+            playSong(currentSong);
+        }
+    }
 }
 
 function startPause(event){
-    var currentPath = startPauseButton.src.substr(startPauseButton.src.lastIndexOf('img'));
-    if(currentPath === startButton){
+    state = playerState();
+    if(state){
         startPauseButton.src = pauseButton;
-        currentSong().play();
+        playSong(currentSong);
     } else {
         startPauseButton.src = startButton;
-        currentSong().pause();
+        pauseSong(currentSong);
     } 
 }
 
 function init(){
     startPauseButton.addEventListener("click", startPause);
-    nextButton.addEventListener("click", nextSong);
-    while (true){
-        
-    }
+    nextButton.addEventListener("click", playNextSong);
+    song.addEventListener("ended", playNextSong);
+    previousButton.addEventListener("click", playBeforeSong);
 }
+
 init();

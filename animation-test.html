@@ -12,7 +12,7 @@
             padding: 0;
         }
 
-        #title{
+        /* #title{
             color:white;
             font-size:3rem;
             animation-name: slideIn;
@@ -21,23 +21,53 @@
             animation-direction: normal;
             animation-timing-function: ease-in-out;
             animation-fill-mode: forwards;
-        }
-        @keyframes slideIn{
+        } */
+        /* @keyframes slideIn{
             0%{
-                /* transform:translateX(0px); */
                 clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
             }
-            25%{}
-            50%{}
-            75%{}
             100%{
-                /* transform:translateX(50px); */
                 clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+        } */
+        .memberContainer{
+            position: absolute;
+            left:50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 1000px;
+        }
+        .member{
+            height:200px;
+            width: 200px;
+            animation-name: zoomIn;
+            animation-duration: 0.5s;
+            animation-fill-mode: forwards;
+
+        }
+
+        @keyframes zoomIn{
+            from{
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                height:200px;
+                width: 200px;
+            } to{
+                clip-path: polygon(10% 10%, 90% 10%, 90% 90%, 10% 90%);
+                height: 250px;
+                width: 250px;
             }
         }
     </style>
 </head>
 <body>
-    <div id="title">밴드 씬의 슈퍼루키, SURL(설)</div>
+    <div class="memberContainer">
+        <img class="member" src="img/myungsuk.jpg">
+        <img class="member" src="img/doyeon.jpg">
+        <img class="member" src="img/hoseung.jpg">
+        <img class="member" src="img/hanbin.jpg">
+    </div>
+    <!-- <div id="title">밴드 씬의 슈퍼루키, SURL(설)</div> -->
 </body>
 </html>
