@@ -42,31 +42,37 @@
         .member{
             height:200px;
             width: 200px;
-            animation-name: zoomIn;
-            animation-duration: 0.5s;
-            animation-fill-mode: forwards;
-
+            transform:scale(1);
+            filter:brightness(1);
+            transition: all 0.3s ease-in-out;
+        }
+        .intro{opacity: 0; display:none;}
+        .member:hover {
+            transform: scale(1.2);
+            filter:brightness(0.5);
+            z-index: 1;
+        }
+        .intro:hover{
+            display:inline-block;
+            opacity: 1;
+            position: absolute;
+            z-index:2;
+        }
+        
+        .memberWrap{
+            width:200px;
+            height:200px;
+            overflow: hidden;
         }
 
-        @keyframes zoomIn{
-            from{
-                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-                height:200px;
-                width: 200px;
-            } to{
-                clip-path: polygon(10% 10%, 90% 10%, 90% 90%, 10% 90%);
-                height: 250px;
-                width: 250px;
-            }
-        }
     </style>
 </head>
 <body>
     <div class="memberContainer">
-        <img class="member" src="img/myungsuk.jpg">
-        <img class="member" src="img/doyeon.jpg">
-        <img class="member" src="img/hoseung.jpg">
-        <img class="member" src="img/hanbin.jpg">
+        <div class="memberWrap"><div class="intro">김도연</div><img class="member" src="img/myungsuk.jpg"></div>
+        <div class="memberWrap"><img class="member" src="img/doyeon.jpg"></div>
+        <div class="memberWrap"><img class="member" src="img/hoseung.jpg"></div>
+        <div class="memberWrap"><img class="member" src="img/hanbin.jpg"></div>
     </div>
     <!-- <div id="title">밴드 씬의 슈퍼루키, SURL(설)</div> -->
 </body>
