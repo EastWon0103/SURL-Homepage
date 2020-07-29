@@ -12,24 +12,6 @@
             padding: 0;
         }
 
-        /* #title{
-            color:white;
-            font-size:3rem;
-            animation-name: slideIn;
-            animation-duration: 2s;
-            animation-delay: now;
-            animation-direction: normal;
-            animation-timing-function: ease-in-out;
-            animation-fill-mode: forwards;
-        } */
-        /* @keyframes slideIn{
-            0%{
-                clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-            }
-            100%{
-                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            }
-        } */
         .memberContainer{
             position: absolute;
             left:50%;
@@ -46,20 +28,28 @@
             filter:brightness(1);
             transition: all 0.3s ease-in-out;
         }
-        .intro{opacity: 0; display:none;}
-        .member:hover {
+        .intro{
+            color:white;
+            font-size: 1rem;
+            opacity: 0;
+            text-align: center;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            white-space: nowrap;
+            transition: all 0.3s ease-in-out;
+        }
+        .memberWrap:hover .member{
             transform: scale(1.2);
             filter:brightness(0.5);
-            z-index: 1;
         }
-        .intro:hover{
-            display:inline-block;
-            opacity: 1;
-            position: absolute;
-            z-index:2;
+        .memberWrap:hover .intro{
+            opacity:1;
         }
         
         .memberWrap{
+            position: relative;
             width:200px;
             height:200px;
             overflow: hidden;
@@ -69,11 +59,22 @@
 </head>
 <body>
     <div class="memberContainer">
-        <div class="memberWrap"><div class="intro">김도연</div><img class="member" src="img/myungsuk.jpg"></div>
-        <div class="memberWrap"><img class="member" src="img/doyeon.jpg"></div>
-        <div class="memberWrap"><img class="member" src="img/hoseung.jpg"></div>
-        <div class="memberWrap"><img class="member" src="img/hanbin.jpg"></div>
+        <div class="memberWrap">
+            <img class="member" src="img/myungsuk.jpg">
+            <div class="intro">오명석(드럼)</div>
+        </div>
+        <div class="memberWrap">
+            <img class="member" src="img/doyeon.jpg">
+            <div class="intro">김도연(기타)</div>
+        </div>
+        <div class="memberWrap">
+            <img class="member" src="img/hoseung.jpg">
+            <div class="intro">설호승(보컬/기타)</div>
+        </div>
+        <div class="memberWrap">
+            <img class="member" src="img/hanbin.jpg">
+            <div class="intro">이한빈(베이스)</div>
+        </div>
     </div>
-    <!-- <div id="title">밴드 씬의 슈퍼루키, SURL(설)</div> -->
 </body>
 </html>
