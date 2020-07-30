@@ -10,12 +10,17 @@
             height: 100%;
             margin: 0;
             padding: 0;
+            color:white;
         }
-
+        #firstContent{
+            text-align: center;
+        }
+        #firstTitle{
+            margin-top:100px;
+            margin-bottom:100px;
+        }
         .memberContainer{
-            position: absolute;
-            left:50%;
-            transform: translateX(-50%);
+            margin:0 auto;
             display: flex;
             align-items: center;
             justify-content: space-around;
@@ -28,8 +33,7 @@
             filter:brightness(1);
             transition: all 0.3s ease-in-out;
         }
-        .intro{
-            color:white;
+        .memberName{
             font-size: 1rem;
             opacity: 0;
             text-align: center;
@@ -44,7 +48,7 @@
             transform: scale(1.2);
             filter:brightness(0.5);
         }
-        .memberWrap:hover .intro{
+        .memberWrap:hover .memberName{
             opacity:1;
         }
         
@@ -54,26 +58,46 @@
             height:200px;
             overflow: hidden;
         }
-
+        #test{
+            text-align: left;
+            position: relative;
+            top:50px;
+            margin:0 auto;
+            width:1000px;
+        }
     </style>
 </head>
 <body>
-    <div class="memberContainer">
-        <div class="memberWrap">
-            <img class="member" src="img/myungsuk.jpg">
-            <div class="intro">오명석(드럼)</div>
+    <div id="firstContent">
+        <h1 id="firstTitle">밴드 씬의 슈퍼루키, SURL(설)</h1>
+        <div class="memberContainer">
+            <div class="memberWrap">
+                <img class="member" src="img/myungsuk.jpg">
+                <div class="memberName">오명석(드럼)</div>
+            </div>
+            <div class="memberWrap">
+                <img class="member" src="img/doyeon.jpg">
+                <div class="memberName">김도연(기타)</div>
+            </div>
+            <div class="memberWrap">
+                <img class="member" src="img/hoseung.jpg">
+                <div class="memberName">설호승(보컬/기타)</div>
+            </div>
+            <div class="memberWrap">
+                <img class="member" src="img/hanbin.jpg">
+                <div class="memberName">이한빈(베이스)</div>
+            </div>
         </div>
-        <div class="memberWrap">
-            <img class="member" src="img/doyeon.jpg">
-            <div class="intro">김도연(기타)</div>
-        </div>
-        <div class="memberWrap">
-            <img class="member" src="img/hoseung.jpg">
-            <div class="intro">설호승(보컬/기타)</div>
-        </div>
-        <div class="memberWrap">
-            <img class="member" src="img/hanbin.jpg">
-            <div class="intro">이한빈(베이스)</div>
+        <div id="test">
+                <p>매력적인 음색을 통해 브리티시 록, 블루스를 기반으로 다양한 장르의 음악을 그들만의 스타일로 녹여내는 4인조 밴드.</p>
+
+                <p>리더 설호승(보컬/기타)을 중심으로, 고등학생 때부터 알고 지내온 이한빈(베이스), 오명석(드럼), 김도연(기타)의 98년생 동갑내기들로 구성되어있다.</p>
+                
+                <p>팀 이름에서 알 수 있듯이, 말씀 설(說)을 써서 ‘이야기를 들려주는 밴드’라는 의미를 가지고 있는 밴드 SURL(설)은, 자신들이 겪었던 일들을 바탕으로 많은 사람들이 공감할 만한 이야기를 음악을 통해 들려준다.</p>
+                
+                <p>2018년 9월 컴필레이션 앨범 &lt;bright #7&gt;을 통해 이들의 첫 번째 공식 음원 ‘여기에 있자’를 발표하며 인디신의 기대주로 떠올랐다. 같은 해 12월 첫 번째 EP &lt;Aren’t You?&gt;를 발표하면서 ‘지금 가장 기대 받는 신인 밴드’로서 본격적인 활동을 시작하고 있다.</p>
+                
+                <p>2018년 9월 ‘2018 신한카드 루키 프로젝트’에서 대상 수상, 12월에는 ‘EBS 올해의 헬로루키 with KOCCA’에서 우수상을 수상하며 명실상부 밴드 씬의 슈퍼루키로 기대를 모으고 있다.</p>
         </div>
     </div>
 </body>
