@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body, html{
+            color:white;
+            background-color: black;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #albumCoverIntroduce, #albumIntroduce{
+            display:inline;
+        }
+        #albumName{
+            text-align: center;
+            width: 500px;
+            border: 1px solid white;
+            margin-bottom:-1px;
+            margin-left:-1px;
+        }
+        #trackContainer{
+            margin:0;
+            margin-left:-1px;
+            margin-bottom:-1px;
+            width: 460px; /*ol태그가 padding 40px를 잡아먹고 있음 */
+            border: 1px solid white;
+        }
+        .track{
+            font-size:1.1rem;
+        }
+        a{
+            text-decoration: none;
+        }
+        a:link{
+            color:white;
+        }
+        a:visited{
+            color:gray;
+        }
+        #albumIntroduceContainer{
+            width:500px;
+            border:1px solid white;
+        }
+    </style>
+</head>
+<body>
+    <div id="albumIntroduceContainer">
+        <div id="albumCoverIntroduce">
+            <img src="img/Aren'tYouAlbumCover.jpg">
+        </div>
+        <div id="albumIntroduce">
+            <h2 id="albumName">1st EP &lt;Aren't You&gt;</h2>
+            <ol id="trackContainer">
+                <li class="track"><a href="https://www.youtube.com/watch?v=Bdrl7sY4Cxw" target="_blank">9지하철</a></li>
+                <li class="track"><a href="https://www.youtube.com/watch?v=0DLg1DEyqbA" target="_blank">The Lights Behind You</a></li>
+                <li class="track"><a href="https://www.youtube.com/watch?v=SV6bIRBiPeQ" target="_blank">눈</a></li>
+                <li class="track"><a href="https://www.youtube.com/watch?v=hKcQRpSdkZY" target="_blank">Candy</a></li>
+                <li class="track"><a href="https://www.youtube.com/watch?v=M6VilkqCv-g" target="_blank">Like Fethers</a></li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

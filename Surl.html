@@ -9,24 +9,7 @@
         @import url("css/mainTitle.css");
         @import url("css/introduce.css");
         @import url("css/audioPlayer.css");
-        
-        #summary{
-            color: white;
-            margin-top:200px;
-            position: relative;
-            left: 10%;
-        }
-        #leftLine{
-            display: inline-block;
-            height: 1px;
-            width: 30px;
-            background-color:white;
-            border:1px solid white;
-        }
-        #rightLine{
-            border:1px solid white;
-        }
-
+        @import url("css/firstContent.css");
         #content{
             height:2000px;
         }
@@ -52,14 +35,31 @@
         </div>
     </div>
 
-    <div id="summary">
-        <div>
-            <span id="leftLine"></span>
-            <span>밴드 씬의 슈퍼루키, SURL(설)</span>
-            <span id="rightLine">-</span>    
+    <div id="firstContent">
+        <h1 id="firstTitle">밴드 씬의 슈퍼루키, SURL(설)</h1>
+        <div class="memberContainer">
+            <div class="memberWrap">
+                <img class="member" src="img/myungsuk.jpg">
+                <div class="memberName">오명석(드럼)</div>
+            </div>
+            <div class="memberWrap">
+                <img class="member" src="img/doyeon.jpg">
+                <div class="memberName">김도연(기타)</div>
+            </div>
+            <div class="memberWrap">
+                <img class="member" src="img/hoseung.jpg">
+                <div class="memberName">설호승(보컬/기타)</div>
+            </div>
+            <div class="memberWrap">
+                <img class="member" src="img/hanbin.jpg">
+                <div class="memberName">이한빈(베이스)</div>
+            </div>
         </div>
-        
-        <img src="img/surlGroupPhoto.jpg">
+        <div id="test">
+            <p>‘이야기를 들려주는 밴드’라는 의미를 가지고 있는 밴드 SURL(설)</p>
+            <p>매력적인 음색을 통해 브리티시 록, 블루스를 기반으로 다양한 장르의 음악을 그들만의 스타일로 녹여내는 4인조 밴드</p>
+            <p>리더 설호승을 중심으로, 고등학생 때부터 알고 지내온 이한빈, 오명석, 김도연의 98년생 동갑내기들로 구성</p>
+        </div>
     </div>
 
     <div class="audioPlayer">
